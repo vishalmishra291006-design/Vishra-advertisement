@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vishra Advertisement</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+    margin:0;
+    font-family: Arial;
+    background: linear-gradient(to right, #1e1e2f, #3a0ca3);
+    color:white;
+    text-align:center;
+}
+.container {
+    margin-top: 100px;
+}
+button {
+    display:block;
+    width:80%;
+    margin:15px auto;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background: linear-gradient(45deg, pink, purple);
+    color:white;
+    font-size:16px;
+}
+input {
+    width:80%;
+    padding:10px;
+    margin:10px;
+    border-radius:8px;
+    border:none;
+}
+.hidden { display:none; }
+</style>
+</head>
+
+<body>
+
+<div class="container" id="home">
+    <h1>Vishra Advertisement</h1>
+    <button onclick="show('advertiser')">Enter as Advertiser</button>
+    <button onclick="show('uploader')">Enter as Story Uploader</button>
+    <button onclick="show('help')">Help Center</button>
+</div>
+
+<!-- Advertiser Form -->
+<div id="advertiser" class="hidden">
+    <h2>Advertiser Form</h2>
+    <input placeholder="Name"><br>
+    <input placeholder="Contact Number"><br>
+    <input placeholder="What to Advertise"><br>
+    <input placeholder="Budget"><br>
+    <input type="date"><br>
+    <button onclick="submitForm()">Submit</button>
+</div>
+
+<!-- Thank You -->
+<div id="thankyou" class="hidden">
+    <h2>Thank you for visiting Vishra!</h2>
+    <button onclick="closeSite()">Close</button>
+</div>
+
+<!-- Uploader -->
+<div id="uploader" class="hidden">
+    <h2>Story Uploader</h2>
+    <button onclick="show('login')">Previous User</button>
+    <button onclick="show('register')">New User</button>
+</div>
+
+<!-- Login -->
+<div id="login" class="hidden">
+    <h2>Login</h2>
+    <input placeholder="User ID"><br>
+    <input placeholder="Password"><br>
+    <button onclick="show('dashboard')">Login</button>
+</div>
+
+<!-- Register -->
+<div id="register" class="hidden">
+    <h2>Register</h2>
+    <input placeholder="Name"><br>
+    <input placeholder="Phone"><br>
+    <input placeholder="Instagram ID"><br>
+    <input placeholder="Location"><br>
+    <button onclick="alert('OTP Sent!')">Verify OTP</button>
+</div>
+
+<!-- Dashboard -->
+<div id="dashboard" class="hidden">
+    <h2>User Profile</h2>
+    <p>Name: ___</p>
+    <p>Instagram: ___</p>
+    <p>Location: ___</p>
+    <p>Earnings: ₹0</p>
+
+    <button>Apply New</button>
+    <button>Application History</button>
+    <button>Withdraw</button>
+    <button>Withdrawal History</button>
+</div>
+
+<!-- Help Center -->
+<div id="help" class="hidden">
+    <h2>Help Center</h2>
+    <button>Edit Details</button>
+    <button>Write Query</button>
+</div>
+
+<script>
+function show(id){
+    document.querySelectorAll('div').forEach(d=>d.classList.add('hidden'));
+    document.getElementById(id).classList.remove('hidden');
+}
+
+function submitForm(){
+    show('thankyou');
+}
+
+function closeSite(){
+    window.close();
+}
+</script>
+
+</body>
+  </html>
